@@ -1,0 +1,240 @@
+.container {
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.container > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.container > header > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.container > header > div:last-child {
+    align-items: flex-end;
+}
+
+.theme {
+    height: 36px;
+    width: 36px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--bg-3);
+    color: var(--fg-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.theme:hover {
+    background-color: var(--bg-4);
+    color: var(--fg-2);
+}
+
+.theme:active {
+    background-color: var(--bg-5);
+    color: var(--fg-1);
+}
+
+.subHeader {
+    display: flex;
+    margin-top: 80px;
+    margin-bottom: 16px;
+}
+
+.container > section {
+    padding: 16px;
+    border-radius: 4px;
+    background-color: var(--bg-2);
+}
+
+.table {
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+    flex: 1;
+}
+
+.table > tr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    background-color: var(--bg-4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 0 20px;
+    height: 42px;
+}
+
+.table > tr:last-child {
+    border: none;
+}
+
+.table > tr > td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 24px;
+}
+
+.table > tr > td:last-child {
+    justify-content: flex-end;
+}
+
+.table > tr > td:first-child {
+    justify-content: flex-start;
+}
+
+.search {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+    margin-top: 16px;
+    padding: 20px 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search > div {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-radius: 8px;
+    background: var(--bg-4);
+}
+
+.search > div:focus-within {
+    outline: 2px solid var(--accent-secondary-3);
+    outline-offset: 2px;
+}
+
+.search > div > input {
+    height: 40px;
+    background: none;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    font-size: 15px;
+    color: white;
+}
+
+.search > div > input::placeholder {
+    color: var(--fg-3);
+    user-select: none;
+}
+
+.search > div > button {
+    border: none;
+    background: none;
+    width: 60px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.315);
+    background: var(--bg-3);
+    border-radius: 6px;
+    margin: 0 6px;
+    color: var(--fg-3);
+    font-size: 12px;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.search > div > button:hover,
+.search > div > button:focus-visible {
+    background: var(--bg-2);
+    color: var(--fg-1);
+}
+
+.levels {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    margin-left: 46px;
+    gap: 20px;
+}
+
+.ranks {
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.ranks > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.levels button {
+    display: flex;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: var(--bg-3);
+    border-radius: 999px;
+    color: var(--fg-3);
+    cursor: pointer;
+}
+
+.levels button:hover:not(:disabled) {
+    background: var(--bg-4);
+    color: var(--fg-2);
+}
+
+.levels button:active:not(:disabled) {
+    background: var(--bg-5);
+    color: var(--fg-1);
+}
+
+.levels button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tableContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.loading {
+    width: 100%;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loading > div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-secondary-1);
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+.loading > p {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+    color: var(--fg-3);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

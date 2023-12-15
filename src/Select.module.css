@@ -1,0 +1,70 @@
+.select {
+    position: relative;
+    border-radius: 3px;
+    display: flex;
+}
+
+.select > button {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    height: 36px;
+    padding: 0px 20px;
+    border-radius: 999px;
+    background-color: var(--accent-secondary-1);
+    transition: background-color 0.1s ease-in-out;
+}
+
+.select > button:hover {
+    background-color: var(--accent-secondary-2);
+}
+
+.select > button:active {
+    background-color: var(--accent-secondary-3);
+}
+
+.select > ul {
+    position: absolute;
+    top: calc(100% + 8px);
+    background-color: var(--bg-3);
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    overflow: hidden scroll;
+    user-select: none;
+    cursor: pointer;
+    max-height: 320px;
+    padding: 4px 0;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.select.rtl > ul {
+    right: 0;
+}
+
+.select > ul::-webkit-scrollbar {
+    width: 0;
+}
+
+.select > ul > li {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    min-height: 36px;
+    padding: 0px 12px;
+}
+
+.select > ul > li:hover,
+.select > ul > li:focus-visible {
+    background-color: var(--bg-4);
+}
+
+.select > ul > li:focus-visible {
+    outline: 2px solid var(--accent-secondary-3);
+    outline-offset: -2px;
+}
